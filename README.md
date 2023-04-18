@@ -1,6 +1,6 @@
 # electron2arduino
 This repository contains a minimalist project to setup an electron graphic interface to control and get informations from a serial port device.
-There are lots of alternatives to do this like processing or node-red but electron is much more standard as it takes advantage of the power of javascript, html, css and nodejs.
+There are lots of alternatives to do this like processing or node-red but electron is much more standard as it takes advantage of the power of javascript, html, css and nodejs. For example, it is possible to use the library chart.js to display real time data in a chart.
 This example has been built using GTP4 and github copilot.
 
 The French translation is available [here](READMEFR.md).

@@ -1,6 +1,6 @@
 # electron2arduino
 Ce dépôt contient un projet minimaliste pour configurer une interface graphique electron pour contrôler et obtenir des informations d'un périphérique de port série.
-Il existe de nombreuses alternatives pour faire cela, comme Processing ou Node-RED, mais Electron est beaucoup plus standard car il tire parti de la puissance de JavaScript, HTML, CSS et Node.js.
+Il existe de nombreuses alternatives pour faire cela, comme Processing ou Node-RED, mais Electron est beaucoup plus standard car il tire parti de la puissance de JavaScript, HTML, CSS et Node.js. Il est donc plus facile de trouver des exemples et des tutoriels sur Internet comme la librairie chart.js pour dessiner des graphiques.
 Cet exemple a été construit en utilisant GPT-4 et GitHub Copilot.
 
 ## 1. Installez nodejs
