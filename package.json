@@ -1,0 +1,29 @@
+{
+  "name": "electron2arduino",
+  "version": "1.0.0",
+  "description": "This repository contains a minimalist project to setup an electron graphic interface to control and get informations from a serial port device.\r There are lots of alternatives to do this like processing or node-red but electron is much more standard as it takes advantage of the power of javascript, html, css and nodejs.\r This example has been built using GTP4 and github copilot.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThotAlion/electron2arduino.git"
+  },
+  "author": "Thomas Peyruse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThotAlion/electron2arduino/issues"
+  },
+  "homepage": "https://github.com/ThotAlion/electron2arduino#readme",
+  "devDependencies": {
+    "electron": "^24.1.2"
+  },
+  "dependencies": {
+    "chart.js": "^3.9.1",
+    "serialport": "^10.5.0",
+    "tableify": "^1.1.1"
+  }
+}
