@@ -1,36 +1,34 @@
 # electron2arduino
-This repository contains a minimalist project to setup an electron graphic interface to control and get informations from a serial port device.
-There are lots of alternatives to do this like processing or node-red but electron is much more standard as it takes advantage of the power of javascript, html, css and nodejs.
-This example has been built using GTP4 and github copilot.
+Ce dépôt contient un projet minimaliste pour configurer une interface graphique electron pour contrôler et obtenir des informations d'un périphérique de port série.
+Il existe de nombreuses alternatives pour faire cela, comme Processing ou Node-RED, mais Electron est beaucoup plus standard car il tire parti de la puissance de JavaScript, HTML, CSS et Node.js.
+Cet exemple a été construit en utilisant GPT-4 et GitHub Copilot.
 
-The French translation is available [here](READMEFR.md).
-
-## 1. Install nodejs
-You can download nodejs from [here](https://nodejs.org/en/download/). I used the LTS version. (v16.15.1)
-to test if nodejs is installed, open a terminal and type:
+## 1. Installez nodejs
+Vous pouvez télécharger nodejs à partir de [ici](https://nodejs.org/fr/download/). J'ai utilisé la version LTS. (v16.15.1)
+Pour vérifier si nodejs est installé, ouvrez un terminal et tapez :
 ```bash
 node -v
 ```
 
-## 2. Install electron
-To install electron and electron-builder, create a directory and open a terminal in it. Then type:
+## 2. Installez electron
+Pour installer electron et electron-builder, créez un répertoire et ouvrez un terminal dedans. Ensuite, tapez :
 ```bash
 npm init
 npm install electron --save-dev
 npm install -g electron-builder
 ```
-This line will install electron only in this directory and is defined as a development dependency.
-The second line will install electron-builder globally.
+Cette ligne installera electron uniquement dans ce répertoire et est défini comme une dépendance de développement.
+La deuxième ligne installera electron-builder globalement.
 
-## 3. Install dependencies
-To install the dependencies, type:
+## 3. Installez les dépendances
+Pour installer les dépendances, tapez :
 ```bash
 npm install chart.js@3 serialport tableify --save
 ```
-This line will install chart.js (only the version 3 works with electron), serialport (to communicate with the serial device) and tableify (this library will convert a javascript object list, here the available serial ports, in html table) in this directory and is defined as a dependency.
+Cette ligne installera chart.js (seule la version 3 fonctionne avec electron), serialport (pour communiquer avec le périphérique série) et tableify (cette bibliothèque convertira une liste d'objets JavaScript, ici les ports série disponibles, en tableau HTML) dans ce répertoire et est définie comme une dépendance.
 
-## 4. Create the electron project
-Edit the package.json file and add the following lines:
+## 4. Créez le projet electron
+Modifiez le fichier package.json et ajoutez les lignes suivantes :
 ```json
 "main": "main.js",
 "scripts": {
@@ -39,7 +37,7 @@ Edit the package.json file and add the following lines:
     "build": "electron-builder"
   },
 ```
-The package.json file should look like this :
+Le fichier package.json doit ressembler à ceci :
 ```json
 {
   "name": "electron2arduino",
@@ -63,8 +61,8 @@ The package.json file should look like this :
   }
 }
 ```
-## 5 Create the main.js file
-Then create the main.js file and add the following lines:
+## 5 Créez le fichier main.js
+Ensuite, créez le fichier main.js et ajoutez les lignes suivantes :
 ```javascript
 // main.js
 
@@ -120,8 +118,8 @@ app.on('window-all-closed', () => {
 // code. You can also put them in separate files and require them here.
 ```
 
-## 6 Create the index.html file
-Then create the index.html file and add the following lines:
+## 6 Créez le fichier index.html
+Ensuite, créez le fichier index.html et ajoutez les lignes suivantes :
 ```html
 <!DOCTYPE html>
 <html>
@@ -151,8 +149,8 @@ Then create the index.html file and add the following lines:
 </html>
 ```
 
-## 7 Create the renderer.js file
-Then create the renderer.js file and add the following lines:
+## 7 Créez le fichier renderer.js
+Ensuite, créez le fichier renderer.js et ajoutez les lignes suivantes :
 ```javascript
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
@@ -267,8 +265,8 @@ port.on('readable', function () {
 })
 ```
 
-## 8 Create the preload.js file
-Then create the preload.js file and add the following lines:
+## 8 Créez le fichier preload.js
+Ensuite, créez le fichier preload.js et ajoutez les lignes suivantes :
 ```javascript
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
@@ -282,8 +280,9 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 ```
 
-## 9 program the Arduino example
-Then program and download the Arduino example taken from the Arduino example SerialCallResponseASCII with a serial port at 115200 bauds:
+## 9 Programmez l'Arduino
+Ensuite, programmez l'Arduino avec le code suivant, qui est un exemple de la librairie Arduino SerialCallResponseASCII avec un port série à 115200 bauds
+
 ```c++
 /*
   Serial Call and Response in ASCII
@@ -355,20 +354,20 @@ void establishContact() {
 ```
 
 
-## 10 Run the app
-To run the app, type the following command in the terminal:
+## 10 executer l'application
+Pour exécuter l'application, tapez la commande suivante dans le terminal:
 ```bash
 npm start
 ```
-The app should look like this:
+Une fenêtre comme celle-ci devrait s'ouvrir
 ![alt text](shot1.png "Screenshot 1")
 
-## 11 build the app
-To build the app, type the following command in the terminal:
+## 11 Créer l'application
+Pour créer l'application, tapez la commande suivante dans le terminal:
 ```bash
 npm run build
 ```
-A dist folder will be created with the executable file.
+Un dossier dist devrait être créé. Dans ce dossier, vous trouverez un fichier nommé electron-quick-start.exe. Vous pouvez l'exécuter pour lancer l'application.
 
 
 
